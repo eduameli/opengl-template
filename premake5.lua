@@ -12,8 +12,8 @@ project "zim-engine"
    
    defines
    {
-      "GLM_ENABLE_EXPERIMENTAL",
-      "GLM_FORCE_RADIANS",
+      -- "GLM_ENABLE_EXPERIMENTAL",
+      -- "GLM_FORCE_RADIANS",
    }
 
    files {
@@ -30,6 +30,9 @@ project "zim-engine"
   {
     "vendor/imgui/backends/imgui_impl_win32.h",
     "vendor/imgui/backends/imgui_impl_win32.cpp",
+
+    "vendor/glm/**.hpp",
+    "vendor/glm/**.cpp",
   }
    
    includedirs
@@ -37,8 +40,9 @@ project "zim-engine"
       "vendor/glad/include",
       "vendor/glfw/include",
       "vendor/imgui/",
+      "vendor/glm/",
    }
-	
+
    links
    {
        "glfw",
@@ -51,6 +55,7 @@ project "zim-engine"
    filter "configurations:release"
       defines { "ZM_NDEBUG" }
       optimize "On"
+
 
 project "glfw"
     location "vendor/glfw"
@@ -65,6 +70,7 @@ project "glfw"
 
     defines {
         "_GLFW_WIN32"
+        -- "_GLFW_X11",
     }
 
     files
