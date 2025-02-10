@@ -25,6 +25,12 @@ project "zim-engine"
       "vendor/imgui/backends/imgui_impl_glfw.cpp",
       "vendor/imgui/backends/imgui_impl_opengl3.cpp",
    }
+
+  removefiles
+  {
+    "vendor/imgui/backends/imgui_impl_win32.h",
+    "vendor/imgui/backends/imgui_impl_win32.cpp",
+  }
    
    includedirs
    {
@@ -58,8 +64,7 @@ project "glfw"
     }
 
     defines {
-        "_GLFW_X11",
-        -- "_GLFW_WIN32" SWAP x11 for win32, x11 is for linux!
+        "_GLFW_WIN32"
     }
 
     files
